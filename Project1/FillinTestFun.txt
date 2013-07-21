@@ -1,0 +1,33 @@
+  // Fill in TokenizerTestDriver::test()
+  std::cout << "\n    Tokenizer Class Simple Test\n "
+            << std::string(30,'=')<<std::endl<<std::endl;
+  // collecting tokens from a string
+  std::cout<<"collecting tokens from a string."<<std::endl<<std::endl<<std::endl;
+  TokenizerTestDataGenerator* ITD=TokenizerTestDataGenerator::create();
+  // inputVec used to store input values
+  std::vector<std::string> inputVec;
+  inputVec.push_back("tokens from a string: -> int x;/* a comment */");
+  inputVec.push_back("/*test.*/abc//test");
+  inputVec.push_back("\"This is a quoted string\"");
+  inputVec.push_back("int main()  {return 0   };");
+  // expectVec used to store expected output values
+  std::vector<std::string> expectVec;
+  expectVec.push_back("tokensfromastring:->intx;");
+  expectVec.push_back("abc");
+  expectVec.push_back("\"This is a quoted string\"");
+  expectVec.push_back("intmain(){return0};");
+  TokenizerTestLogger* ITL=TokenizerTestLogger::create();
+  bool tag=true;
+  for(size_t i=0; i<inputVec.size(); i++){
+    Toker t_fromStr(inputVec[i], false);
+    std::string tok;
+    std::string output;
+    do{
+      tok = t_fromStr.getTok();
+      output+=tok;} 
+    while(tok != "");
+    // It there is a case not passed, the whole test result will be fail, not the test continue.
+    if(!ITL->caseResult(inputVec[i],output,expectVec[i]))
+      tag=false;
+  }
+  return tag;

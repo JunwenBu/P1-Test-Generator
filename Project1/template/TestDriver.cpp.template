@@ -1,0 +1,46 @@
+// <--replace-->TestDriver.cpp -ver 1.1 2/8/2012
+//
+// Source: Jim Fawcett
+// Modified by: Junwen Bu
+
+#include "<--replace-->TestDriver.h"
+<--replace-->TestDriver::<--replace-->TestDriver(void)
+{
+  // initialize any test stuff here
+}
+
+<--replace-->TestDriver::~<--replace-->TestDriver(void)
+{
+  // deallocate test resources here
+}
+
+ITest* ITest::create()
+{
+  return new <--replace-->TestDriver;
+}
+
+bool <--replace-->TestDriver::test()
+{
+  // put calls into tested code here
+  // and return pass status not the
+  // automatic fail below
+
+  return false;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

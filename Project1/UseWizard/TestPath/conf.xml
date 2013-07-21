@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<TestItem>
+	<Path>../TestPath</Path>
+	<TestName>Tokenizer</TestName>
+	<List>Tokenizer.h</List>
+	<List>Tokenizer.cpp</List>	
+</TestItem>
+

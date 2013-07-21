@@ -1,0 +1,53 @@
+// <--replace-->TestDataGenerator.cpp -ver1.0
+// Author: Junwen Bu
+
+#include "<--replace-->TestDataGenerator.h"
+
+<--replace-->TestDataGenerator::<--replace-->TestDataGenerator(void)
+{
+  // initialize any test stuff here
+}
+
+<--replace-->TestDataGenerator::~<--replace-->TestDataGenerator(void)
+{
+  // deallocate test resources here
+}
+
+<--replace-->TestDataGenerator* <--replace-->TestDataGenerator::create()
+{
+  return new <--replace-->TestDataGenerator;
+}
+
+  // store test data from file line by line
+std::vector<std::string> <--replace-->TestDataGenerator::storeFileByLine(std::ifstream &is)
+{
+  std::vector<std::string> linesOfText;
+  std::string textline;
+  while (std::getline(is, textline))
+    linesOfText.push_back(textline);
+  return linesOfText;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
